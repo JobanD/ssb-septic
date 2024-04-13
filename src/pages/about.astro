@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import truck from "../assets/truck-left.jpg";
+import manPump from "../assets/man-with-septic.jpg";
+import septic from "../assets/septic-about.jpg";
+import logo from "../assets/official-logo.jpg"
+import backgroundPump from "../assets/background-pump.jpg"
+import groupTrucks from "../assets/group-trucks.JPG"
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="SSB Septic Tank About">
+    <section class="text-center py-16 bg-gradient-to-r from-cyan-500 to-primary text-white">
+        <h1 class="text-5xl font-bold mb-4">About SSB</h1>
+        <p class="text-xl mb-8">Learn more about SSB history, who we are, and how we started</p>
+    </section>
+    <section class="bg-gray-100 w-full py-6">
+      <div class="max-w-6xl mx-auto px-4">
+        <!-- Regular order div -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+          <div class="flex flex-col md:flex-row gap-6 items-center p-6">
+            <div class="flex-1 text-center md:text-left">
+              <h2 class="font-bold mb-4 text-center">
+                <span class="text-4xl text-primary">Our Mission:</span><br>
+                <span class="text-4xl text-black">Protecting Your Environment</span>
+              </h2>        
+              <p class="text-lg leading-relaxed text-gray-800 text-center">Our mission is to deliver top-notch septic services while protecting the environment, ensuring your system's and ecosystem's health with advanced technology.</p>
+            </div>
+            <div class="flex-1">
+              <Image src={logo} alt="Descriptive Alt Text" class="max-w-full h-auto">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Reversed order div for larger screens -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+          <div class="flex flex-col md:flex-row-reverse gap-6 items-center p-6">
+            <div class="flex-1">
+              <h2 class="font-bold mb-4 text-center">
+                <span class="text-4xl text-primary">Who We Are:</span><br>
+                <span class="text-4xl text-black">Your Septic Service Partners</span>
+              </h2> 
+              <p class="text-lg leading-relaxed text-gray-800 text-center">We see every septic system as our own, focusing on your satisfaction and safety, providing comprehensive solutions that exceed expectations.</p>
+            </div>
+            <div class="flex-1">
+              <Image src={truck} alt="Another Descriptive Alt Text" class="max-w-full h-auto">
+            </div>
+          </div>
+        </div>
+
+      <!-- Regular order div -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+          <div class="flex flex-col md:flex-row gap-6 items-center p-6">
+            <div class="flex-1">
+              <h2 class="font-bold mb-4 text-center">
+                <span class="text-4xl text-primary">Why Choose Us:</span><br>
+                <span class="text-4xl text-black">Expertise Meets Innovation</span>
+              </h2> 
+              <p class="text-lg leading-relaxed text-gray-800 text-center">
+                Blending extensive experience in septic and dump trucking services with innovation, we lead in efficiently addressing your needs. 
+                Our commitment to excellence is backed by cutting-edge equipment and a proven track record of optimal results in both sectors.
+              </p>
+            </div>
+            <div class="flex-1">
+              <Image src={groupTrucks} alt="Descriptive Alt Text" class="max-w-full h-auto">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center py-12 bg-primary">
+      <h2 class="text-3xl font-bold text-white mb-6">Ready to Get Started?</h2>
+      <p class="text-xl text-white mb-8">Contact us today for a free consultation and quote!</p>
+      <a href="/contact" class="bg-white text-primary font-semibold px-6 py-3 rounded-lg transition-colors duration-300 hover:bg-gray-200">
+          Contact Us
+      </a>
+  </section>
+</Layout>

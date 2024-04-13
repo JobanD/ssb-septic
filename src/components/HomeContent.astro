@@ -1,0 +1,32 @@
+---
+import Card from "../components/Card.astro";
+
+// Update or refine these props as needed
+const services = [
+  {
+    title: "Our Pricing",
+    description: "Find out more about our pricing plans",
+    href: "/services",
+  },
+  {
+    title: "Learn More About Us",
+    description: "Learn more about our commitment to providing exceptional septic system services.",
+    href: "/about",
+  },
+  {
+    title: "FAQ",
+    description: "Find answers to common questions about septic system maintenance and our services.",
+    href: "/faq",
+  },
+];
+---
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-3 gap-8">
+            {services.map((service) => (
+                <Card title={service.title} body={service.description} href={service.href}>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-1 md:mb-3">{service.title}<span class="text-primary-500 ml-2">&rarr;</span></h2>
+                    <p>{service.description}</p>
+                </Card>
+            ))}
+        </div>
+    </section>

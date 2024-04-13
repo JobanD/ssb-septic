@@ -1,0 +1,16 @@
+---
+// Define properties that you might want to pass to the component
+interface Props {
+  description: string;
+  keywords: string;
+}
+const { description, keywords } = Astro.props;
+---
+
+<Fragment>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Add other meta tags as needed -->
+</Fragment>

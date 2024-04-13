@@ -1,0 +1,19 @@
+---
+// src/pages/faq.astro
+import React from 'react';
+import { AccordionSection } from '@/components/AccordionSection';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SSB Septic Tank About">
+    <section class="text-center py-16 px-2 bg-gradient-to-b from-cyan-500 to-primary text-white">
+        <h1 class="text-5xl font-bold mb-4">FAQ & Contact</h1>
+        <p class="text-xl mb-8">Take a look below to see some frequently asked questions by customers of SSB</p>
+    </section>
+    <AccordionSection client:load />
+    <section class="py-12 px-2 bg-primary text-center text-white">
+        <h2 class="text-3xl font-bold  mb-6">Have More Questions?</h2>
+        <p class="text-xl mb-8">Get in touch now for further inquiries. Leave a message if we aren't available we're here to help!</p>
+        <a href="tel:+12068338777" class="inline-block bg-white text-primary py-2 px-6 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors duration-300">Call Now: +1 (206) 833-8777</a>
+    </section>
+</Layout>

@@ -1,0 +1,47 @@
+---
+// Your frontmatter and imports remain the same
+import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import truckLeft from '../assets/truck-right-mountains.jpg';
+import truckBack from '../assets/back-truck.jpg';
+// import learnMoreImage from '../assets/learn-more-image.jpg'; // Replace with actual path
+---
+
+<Layout title="Contact Us">
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <!-- Booking Section -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row items-center">
+                    <Image src={truckBack} alt="Ready to Book?" class="w-full md:w-1/2 object-cover" />
+                    <div class="p-8 space-y-4 w-full md:w-1/2 flex flex-col justify-center text-center">
+                        <h2 class="text-4xl font-bold text-gray-900">Ready to Book?</h2>
+                        <p class="text-lg text-gray-600">Schedule your service with us today.</p>
+                        <a href="tel:+12068338777" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 mx-auto rounded text-xl transition-colors duration-300">
+                            Call Us Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning More Section -->
+            <div class="mt-10 bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row-reverse items-center">
+                    <Image src={truckLeft} alt="Want to Learn More?" class="w-full md:w-1/2 object-cover" />
+                    <div class="p-8 space-y-4 w-full md:w-1/2 flex flex-col justify-center text-center">
+                        <h2 class="text-4xl font-bold text-gray-900">Want to Learn More?</h2>
+                        <p class="text-lg text-gray-600">Discover more about our services and values.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center text-center">
+                            <a href="/about" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg transition-colors duration-300">
+                                About Us
+                            </a>
+                            <a href="/services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg transition-colors duration-300">
+                                Our Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
