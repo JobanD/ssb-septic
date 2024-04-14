@@ -5,10 +5,13 @@ import { AccordionSection } from '@/components/AccordionSection';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="SSB Septic Tank About">
+<Layout 
+    title="SSB Septic Tank About"
+    description="Have questions about septic system care, services, or maintenance? Check out our FAQ page for detailed answers to common questions and expert advice to help keep your septic system running smoothly."
+>
     <section class="text-center py-16 px-2 bg-gradient-to-b from-cyan-500 to-primary text-white">
-        <h1 class="text-5xl font-bold mb-4">FAQ & Contact</h1>
-        <p class="text-xl mb-8">Take a look below to see some frequently asked questions by customers of SSB</p>
+        <h1 class="text-5xl font-bold mb-4">FAQ</h1>
+        <p class="text-xl mb-8">Take a look below to see some frequently asked questions (FAQ) by customers of SSB</p>
     </section>
     <AccordionSection client:load />
     <section class="py-12 px-2 bg-primary text-center text-white">

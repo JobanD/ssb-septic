@@ -25,6 +25,12 @@ export const AccordionSection = () => (
         A septic system consists of a tank and a series of pipes, working with countless microorganisms to treat your waste.
         </AccordionContent>
       </AccordionItem>
+      <AccordionItem value="item-4">
+        <AccordionTrigger>Do you offer any additional services?</AccordionTrigger>
+        <AccordionContent>
+          Yes! We also offer dump truck services please contact us by phone to inquire additional information.
+        </AccordionContent>
+      </AccordionItem>
       {/* Add more AccordionItems here as needed */}
     </Accordion>
   </section>

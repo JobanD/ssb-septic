@@ -1,9 +1,10 @@
 ---
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 import Navigation from "@/components/Navigation.astro"
 import Footer from "@/components/Footer.astro"
 import MetaTags from '@/components/MetaTags.astro';
@@ -14,12 +15,10 @@ import { ViewTransitions } from 'astro:transitions';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<MetaTags 
-			description="SSB Septic Services offers professional, reliable, and eco-friendly septic system installations, maintenance, and repair services. We ensure top-quality care for residential and commercial septic systems in the greater Seattle and Kent area."
+			description={description}
 			keywords="septic services, septic system repair, septic maintenance, eco-friendly septic solutions, septic tank installation, septic system experts, Seattle septic service, Kent septic service, residential septic services, commercial septic services"
 		/>
 		<!-- <ViewTransitions /> -->
