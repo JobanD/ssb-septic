@@ -5,8 +5,8 @@ import { AccordionSection } from '@/components/AccordionSection';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-    title="SSB Septic Tank About"
+<Layout
+    title="FAQ – Septic System Maintenance & Services | SSB Septic"
     description="Have questions about septic system care, services, or maintenance? Check out our FAQ page for detailed answers to common questions and expert advice to help keep your septic system running smoothly."
 >
     <section class="text-center py-16 px-2 bg-gradient-to-b from-cyan-500 to-primary text-white">
@@ -20,3 +20,29 @@ import Layout from '../layouts/Layout.astro';
         <a href="tel:+12068338777" class="inline-block bg-white text-primary py-2 px-6 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors duration-300">Call Now: +1 (206) 833-8777</a>
     </section>
 </Layout>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services do you offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We provide comprehensive septic services including installation, maintenance, and repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should my septic system be inspected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's recommended to have your septic system inspected at least once every three years."
+      }
+    }
+  ]
+}
+</script>

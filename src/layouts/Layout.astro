@@ -9,6 +9,7 @@ import Navigation from "@/components/Navigation.astro"
 import Footer from "@/components/Footer.astro"
 import MetaTags from '@/components/MetaTags.astro';
 import { ViewTransitions } from 'astro:transitions';
+import logo from "../assets/official-logo-transparent.png"
 ---
 
 <!doctype html>
@@ -17,12 +18,35 @@ import { ViewTransitions } from 'astro:transitions';
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<MetaTags 
+		<MetaTags
 			description={description}
 			keywords="septic services, septic system repair, septic maintenance, eco-friendly septic solutions, septic tank installation, septic system experts, Seattle septic service, Kent septic service, residential septic services, commercial septic services"
 		/>
 		<!-- <ViewTransitions /> -->
 		<title>{title}</title>
+		<script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "SSB Septic Services",
+            "url": "https://ssbseptic.com",
+            "telephone": "+1-206-833-8777",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "25000 180th Ave SE",
+              "addressLocality": "Covington",
+              "addressRegion": "WA",
+              "postalCode": "98042",
+              "addressCountry": "US"
+            },
+            "areaServed": {
+              "@type": "Place",
+              "name": "Kent and Seattle"
+            },
+            "description": "Professional septic system installation, pumping, and maintenance services.",
+            "image": "https://ssbseptic.com/_astro/official-logo-transparent.C-WHKZP2_ZEKIeJ.webp"
+          }
+        </script>
 	</head>
 	<body>
 		<Navigation />
