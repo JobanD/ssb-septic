@@ -9,18 +9,51 @@ import truckBack from '../assets/back-truck.jpg';
     title="Contact SSB Septic – Book Septic Service in Kent Today"
     description="Reach out to SSB Septic Services for professional and reliable septic system solutions. Contact us today for inquiries or to schedule a service in the Seattle and Kent area."
 >
+    <!-- Hero Section -->
+    <section class="text-center py-16 bg-gradient-to-r from-cyan-500 to-primary text-white">
+        <h1 class="text-5xl font-bold mb-4">Contact SSB Septic Services</h1>
+        <p class="text-xl mb-8">Get in touch with Kent's trusted septic experts for all your septic system needs</p>
+    </section>
+
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
+            <!-- Contact Information Section -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                <div class="p-8 text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get Your Free Quote Today</h2>
+                    <p class="text-lg text-gray-600 mb-6">Professional septic services available 24/7 throughout the greater Seattle and Kent area. Our experienced team is ready to help with installations, maintenance, repairs, and emergency services.</p>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-gray-900">Business Hours</h3>
+                            <div class="text-lg text-gray-600">
+                                <p><strong>Monday - Friday:</strong> 7:00 AM - 6:00 PM</p>
+                                <p><strong>Saturday:</strong> 8:00 AM - 4:00 PM</p>
+                                <p><strong>Sunday:</strong> Emergency Services Only</p>
+                                <p class="mt-4"><strong>Emergency Services:</strong> Available 24/7</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-gray-900">Contact Information</h3>
+                            <div class="text-lg text-gray-600">
+                                <p><strong>Phone:</strong> <a href="tel:+12068338777" class="text-primary hover:underline">(206) 833-8777</a></p>
+                                <p><strong>Address:</strong> 25000 180th Ave SE, Covington, WA 98042</p>
+                                <p><strong>Service Areas:</strong> Kent, Seattle, Covington, Renton, Federal Way, Auburn, and surrounding areas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Booking Section -->
             <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div class="flex flex-col md:flex-row items-center">
-                    <Image src={truckBack} alt="Ready to Book?" class="w-full md:w-1/2 object-cover" />
+                    <Image src={truckBack} alt="SSB Septic truck ready for service" class="w-full md:w-1/2 object-cover" />
                     <div class="p-8 space-y-4 w-full md:w-1/2 flex flex-col justify-center text-center">
                         <h2 class="text-4xl font-bold text-gray-900">Ready to Book?</h2>
-                        <p class="text-lg text-gray-600">Schedule your service with us today.</p>
-                        <p class="text-lg text-gray-600">25000 180th Ave SE, Covington, WA, 98042</p>
+                        <p class="text-lg text-gray-600">Don't wait for septic problems to get worse. Schedule your professional septic service with SSB today and ensure your system runs smoothly year-round.</p>
+                        <p class="text-lg text-gray-600 font-semibold">Call now for immediate assistance or to schedule your appointment at your convenience.</p>
                         <a href="tel:+12068338777" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 mx-auto rounded text-xl transition-colors duration-300">
-                            Call Us Now
+                            Call Us Now: (206) 833-8777
                         </a>
                     </div>
                 </div>
@@ -29,17 +62,39 @@ import truckBack from '../assets/back-truck.jpg';
             <!-- Learning More Section -->
             <div class="mt-10 bg-white rounded-xl shadow-lg overflow-hidden">
                 <div class="flex flex-col md:flex-row-reverse items-center">
-                    <Image src={liveService} alt="Want to Learn More?" class="w-full md:w-1/2 object-cover" />
+                    <Image src={liveService} alt="SSB Septic team providing professional service" class="w-full md:w-1/2 object-cover" />
                     <div class="p-8 space-y-4 w-full md:w-1/2 flex flex-col justify-center text-center">
                         <h2 class="text-4xl font-bold text-gray-900">Want to Learn More?</h2>
-                        <p class="text-lg text-gray-600">Discover more about our services and values.</p>
+                        <p class="text-lg text-gray-600">Discover more about our comprehensive septic services, our commitment to environmental protection, and why we're the trusted choice for septic system care in the Kent and Seattle area.</p>
+                        <p class="text-lg text-gray-600">Learn about our eco-friendly approach, advanced equipment, and decades of combined experience in septic system maintenance and repair.</p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center text-center">
                             <a href="/about" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg transition-colors duration-300">
-                                About Us
+                                About SSB Septic
                             </a>
                             <a href="/services" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded text-lg transition-colors duration-300">
-                                Our Services
+                                Our Services & Pricing
                             </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Us Section -->
+            <div class="mt-10 bg-primary rounded-xl shadow-lg overflow-hidden text-white">
+                <div class="p-8 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Why Choose SSB Septic Services?</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-semibold">Licensed & Insured</h3>
+                            <p>Fully licensed, bonded, and insured for your peace of mind and protection.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-semibold">24/7 Emergency Service</h3>
+                            <p>Septic emergencies don't wait. Neither do we. Available around the clock.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-semibold">Eco-Friendly Approach</h3>
+                            <p>Environmental protection is our priority with every service we provide.</p>
                         </div>
                     </div>
                 </div>
