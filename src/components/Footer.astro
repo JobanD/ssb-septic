@@ -1,32 +1,370 @@
 ---
-// Footer.astro
-// You can import any necessary scripts or styles here if needed.
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-800 text-white py-6">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <div class="mb-2">
-        <a href="/" class="text-xl font-bold">SSB Septic Services</a>
-      </div>
-      <nav class="mb-4">
-        <a href="/about" class="mx-2 hover:underline">About</a>
-        <a href="/services" class="mx-2 hover:underline">Services</a>
-        <a href="/faq" class="mx-2 hover:underline">FAQ & Contact</a>
-        <a href="/policy" class="mx-2 hover:underline">Privacy Policy</a>
-        <a href="/contact" class="mx-2 hover:underline">Contact</a>
-      </nav>
-      <div class="social-icons flex justify-center space-x-4">
-        <!-- Example: using simple SVGs for icons -->
-        <a href="https://twitter.com/yourhandle" aria-label="Twitter">
-          <!-- Inline SVG for Twitter icon -->
-        </a>
-        <a href="https://facebook.com/yourpage" aria-label="Facebook">
-          <!-- Inline SVG for Facebook icon -->
-        </a>
-        <!-- Add more social icons as needed -->
-      </div>
-      <div class="mt-4">
-        © 2024 SSB Septic Services. All rights reserved.
-      </div>
+<footer class="footer">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">
+                    <span class="logo-text">SSB</span>
+                    <span class="logo-tagline">Septic Services</span>
+                </a>
+                <p class="brand-description">
+                    Professional septic services for residential and commercial properties throughout the greater Seattle and Kent area. Licensed, bonded, and insured.
+                </p>
+                <div class="brand-badges">
+                    <div class="badge">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>Licensed & Insured</span>
+                    </div>
+                    <div class="badge">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        <span>24/7 Emergency</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="link-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/services">Services & Pricing</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/policy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-links">
+                <h4 class="footer-heading">Our Services</h4>
+                <ul class="link-list">
+                    <li><a href="/services">Septic Tank Cleaning</a></li>
+                    <li><a href="/services">Tank Locating</a></li>
+                    <li><a href="/services">Emergency Services</a></li>
+                    <li><a href="/services">Inspections</a></li>
+                    <li><a href="/services">Dump Trucking</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-contact">
+                <h4 class="footer-heading">Contact Us</h4>
+                <div class="contact-items">
+                    <a href="tel:+12068338777" class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Call Us</span>
+                            <span class="contact-value">(206) 833-8777</span>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Address</span>
+                            <span class="contact-value">25000 180th Ave SE<br/>Covington, WA 98042</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <span class="contact-label">Business Hours</span>
+                            <span class="contact-value">Mon-Fri: 7AM-6PM<br/>Sat: 8AM-4PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p class="copyright">
+                &copy; {currentYear} SSB Septic Services. All rights reserved.
+            </p>
+            <div class="service-areas">
+                <span class="areas-label">Serving:</span>
+                <span class="areas-list">Kent, Seattle, Covington, Renton, Federal Way, Auburn & surrounding areas</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.footer {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    color: #94a3b8;
+}
+
+.footer-main {
+    padding: 4rem 1.25rem 3rem;
+}
+
+.footer-container {
+    max-width: 80rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 2.5rem;
+}
+
+/* Brand Column */
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.logo-text {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+}
+
+.logo-tagline {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.brand-description {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+}
+
+.brand-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(45, 138, 110, 0.15);
+    border: 1px solid rgba(45, 138, 110, 0.25);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #4ade9d;
+}
+
+.badge svg {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+/* Footer Links */
+.footer-links {
+    min-width: 140px;
+}
+
+.footer-heading {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.link-list a {
+    font-size: 0.9375rem;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-block;
+}
+
+.link-list a:hover {
+    color: white;
+}
+
+/* Contact Section */
+.footer-contact {
+    min-width: 220px;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+}
+
+a.contact-item:hover {
+    color: white;
+}
+
+a.contact-item:hover .contact-icon {
+    background: rgba(45, 138, 110, 0.3);
+    border-color: rgba(45, 138, 110, 0.4);
+}
+
+.contact-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.contact-icon svg {
+    width: 1rem;
+    height: 1rem;
+    color: #4ade9d;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-value {
+    font-size: 0.9375rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.5rem 1.25rem;
+}
+
+.footer-bottom .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.service-areas {
+    font-size: 0.8125rem;
+    color: #64748b;
+}
+
+.areas-label {
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .footer-bottom .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-main {
+        padding: 5rem 2rem 4rem;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+    }
+
+    .footer-bottom {
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr 1.25fr;
+        gap: 4rem;
+    }
+
+    .footer-brand {
+        max-width: none;
+    }
+}
+</style>

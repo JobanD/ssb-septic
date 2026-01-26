@@ -5,69 +5,466 @@ import Layout from "../layouts/Layout.astro"
   title="Privacy Policy | SSB Septic Services Kent"
   description="Read our privacy policy to understand how SSB Septic Services collects, uses, and protects your personal information."
 >
-    <section class="text-center py-16 bg-gradient-to-r from-cyan-500 to-primary text-white">
-        <h1 class="text-5xl font-bold mb-4">Privacy Policy</h1>
-        <p class="text-xl mb-8">Understanding how we protect your personal information</p>
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <div class="policy-hero-bg"></div>
+        <div class="policy-hero-content">
+            <span class="policy-badge">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Your Privacy Matters
+            </span>
+            <h1 class="policy-title">Privacy Policy</h1>
+            <p class="policy-subtitle">Understanding how we protect your personal information</p>
+        </div>
     </section>
-    <section class="bg-gray-100 w-full py-6">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 p-6">
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            This privacy notice discloses the privacy practices for SSB Septic Services (<a href="/" class="text-blue-600 hover:text-blue-800">https://www.ssbseptic.com/</a>). This privacy notice applies solely to information collected by this Web site. It will notify you of the following:
-          </p>
-          <ol class="list-decimal pl-6 mb-4 text-lg leading-relaxed text-gray-800">
-            <li>What personally identifiable information is collected from you through the Web site, how it is used and with whom it may be shared.</li>
-            <li>What choices are available to you regarding the use of your data.</li>
-            <li>The security procedures in place to protect the misuse of your information.</li>
-            <li>How you can correct any inaccuracies in the information.</li>
-          </ol>
-        </div>
 
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 p-6">
-          <h2 class="text-3xl font-bold mb-4 text-primary">Information Collection, Use, and Sharing</h2>
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via e-mail or other direct contact from you. We will not sell or rent this information to anyone.
-          </p>
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.
-          </p>
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            Unless you ask us not to, we may contact you via e-mail in the future to tell you about specials, new products or services, or changes to this privacy policy.
-          </p>
-        </div>
+    <!-- Content Section -->
+    <section class="policy-content">
+        <div class="policy-container">
+            <!-- Introduction Card -->
+            <div class="policy-card policy-intro">
+                <div class="policy-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <p class="policy-intro-text">
+                    This privacy notice discloses the privacy practices for SSB Septic Services (<a href="/" class="policy-link">https://www.ssbseptic.com/</a>). This privacy notice applies solely to information collected by this Web site. It will notify you of the following:
+                </p>
+                <ol class="policy-list-numbered">
+                    <li>What personally identifiable information is collected from you through the Web site, how it is used and with whom it may be shared.</li>
+                    <li>What choices are available to you regarding the use of your data.</li>
+                    <li>The security procedures in place to protect the misuse of your information.</li>
+                    <li>How you can correct any inaccuracies in the information.</li>
+                </ol>
+            </div>
 
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 p-6">
-          <h2 class="text-3xl font-bold mb-4 text-primary">Your Access To and Control Over Information</h2>
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the e-mail address or phone number given on our Web site:
-          </p>
-          <ul class="list-disc pl-6 mb-4 text-lg leading-relaxed text-gray-800">
-            <li>See what data we have about you, if any.</li>
-            <li>Change/correct any data we have about you.</li>
-            <li>Have us delete any data we have about you.</li>
-            <li>Express any concern you have about our use of your data.</li>
-          </ul>
-        </div>
+            <!-- Information Collection Card -->
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <div class="policy-card-icon-small">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h2 class="policy-card-title">Information Collection, Use, and Sharing</h2>
+                </div>
+                <div class="policy-card-body">
+                    <p>We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via e-mail or other direct contact from you. We will not sell or rent this information to anyone.</p>
+                    <p>We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.</p>
+                    <p>Unless you ask us not to, we may contact you via e-mail in the future to tell you about specials, new products or services, or changes to this privacy policy.</p>
+                </div>
+            </div>
 
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8 p-6">
-          <h2 class="text-3xl font-bold mb-4 text-primary">Security</h2>
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            We take precautions to protect your information. When you submit sensitive information via the Web site, your information is protected both online and offline.
-          </p>
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            Wherever we collect sensitive information (such as credit card data), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a closed lock icon at the bottom of your web browser, or looking for "https" at the beginning of the address of the Web page.
-          </p>
-          <p class="text-lg leading-relaxed text-gray-800 mb-4">
-            While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment.
-          </p>
+            <!-- Access & Control Card -->
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <div class="policy-card-icon-small">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h2 class="policy-card-title">Your Access To and Control Over Information</h2>
+                </div>
+                <div class="policy-card-body">
+                    <p>You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the e-mail address or phone number given on our Web site:</p>
+                    <ul class="policy-list">
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            See what data we have about you, if any.
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Change/correct any data we have about you.
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Have us delete any data we have about you.
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Express any concern you have about our use of your data.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Security Card -->
+            <div class="policy-card">
+                <div class="policy-card-header">
+                    <div class="policy-card-icon-small policy-card-icon-accent">
+                        <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h2 class="policy-card-title">Security</h2>
+                </div>
+                <div class="policy-card-body">
+                    <p>We take precautions to protect your information. When you submit sensitive information via the Web site, your information is protected both online and offline.</p>
+                    <p>Wherever we collect sensitive information (such as credit card data), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a closed lock icon at the bottom of your web browser, or looking for "https" at the beginning of the address of the Web page.</p>
+                    <p>While we use encryption to protect sensitive information transmitted online, we also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information. The computers/servers in which we store personally identifiable information are kept in a secure environment.</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-    <section class="text-center py-12 bg-primary">
-      <h2 class="text-3xl font-bold text-white mb-6">Questions About Our Privacy Policy?</h2>
-      <p class="text-xl text-white mb-8">We're here to address any concerns you may have.</p>
-      <a href="/contact" class="bg-white text-primary font-semibold px-6 py-3 rounded-lg transition-colors duration-300 hover:bg-gray-200">
-          Contact Us
-      </a>
+
+    <!-- CTA Section -->
+    <section class="policy-cta">
+        <div class="policy-cta-container">
+            <div class="policy-cta-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <h2 class="policy-cta-title">Questions About Our Privacy Policy?</h2>
+            <p class="policy-cta-text">We're here to address any concerns you may have about how we handle your information.</p>
+            <a href="/contact" class="policy-cta-button">
+                Contact Us
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+            </a>
+        </div>
     </section>
 </Layout>
+
+<style>
+/* Hero Section */
+.policy-hero {
+    position: relative;
+    padding: 8rem 1.5rem 5rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 50%, #1e3a5f 100%);
+    overflow: hidden;
+}
+
+.policy-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.policy-hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.policy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #86efc0;
+    margin-bottom: 1.5rem;
+}
+
+.policy-badge svg {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.policy-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+}
+
+.policy-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Content Section */
+.policy-content {
+    padding: 4rem 1.5rem;
+    background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.policy-container {
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.policy-card {
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.policy-intro {
+    padding: 2rem;
+}
+
+.policy-card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+    border-radius: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.policy-card-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: white;
+}
+
+.policy-intro-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 1.25rem;
+}
+
+.policy-link {
+    color: #2d8a6e;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.policy-link:hover {
+    color: #1e3a5f;
+}
+
+.policy-list-numbered {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: policy-counter;
+}
+
+.policy-list-numbered li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 0.875rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #475569;
+    counter-increment: policy-counter;
+}
+
+.policy-list-numbered li::before {
+    content: counter(policy-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: #f1f5f9;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+.policy-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(to right, #f8fafc, white);
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.policy-card-icon-small {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.policy-card-icon-small svg {
+    width: 1.375rem;
+    height: 1.375rem;
+    color: white;
+}
+
+.policy-card-icon-accent {
+    background: linear-gradient(135deg, #2d8a6e 0%, #3daa8e 100%);
+}
+
+.policy-card-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0;
+}
+
+.policy-card-body {
+    padding: 1.5rem 2rem 2rem;
+}
+
+.policy-card-body p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #475569;
+    margin: 0 0 1rem;
+}
+
+.policy-card-body p:last-child {
+    margin-bottom: 0;
+}
+
+.policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.policy-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.policy-list li svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #2d8a6e;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+/* CTA Section */
+.policy-cta {
+    padding: 5rem 1.5rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+}
+
+.policy-cta-container {
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.policy-cta-icon {
+    width: 4rem;
+    height: 4rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.policy-cta-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: #86efc0;
+}
+
+.policy-cta-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem;
+}
+
+.policy-cta-text {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0 0 2rem;
+}
+
+.policy-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 1rem 2rem;
+    background: white;
+    color: #1e3a5f;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.policy-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.policy-cta-button svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    transition: transform 0.3s ease;
+}
+
+.policy-cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+@media (min-width: 768px) {
+    .policy-content {
+        padding: 5rem 2rem;
+    }
+
+    .policy-container {
+        gap: 2rem;
+    }
+
+    .policy-intro {
+        padding: 2.5rem;
+    }
+
+    .policy-card-header {
+        padding: 1.75rem 2.5rem;
+    }
+
+    .policy-card-body {
+        padding: 2rem 2.5rem 2.5rem;
+    }
+}
+</style>

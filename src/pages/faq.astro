@@ -1,6 +1,5 @@
 ---
 // src/pages/faq.astro
-import React from 'react';
 import { AccordionSection } from '@/components/AccordionSection';
 import Layout from '../layouts/Layout.astro';
 ---
@@ -9,20 +8,228 @@ import Layout from '../layouts/Layout.astro';
     title="FAQ – Septic System Maintenance & Services | SSB Septic"
     description="Have questions about septic system care, services, or maintenance? Check out our FAQ page for detailed answers to common questions and expert advice to help keep your septic system running smoothly."
 >
-    <section class="text-center py-16 px-2 bg-gradient-to-b from-cyan-500 to-primary text-white">
-        <h1 class="text-5xl font-bold mb-4">FAQ</h1>
-        <p class="text-xl mb-8">Take a look below to see some frequently asked questions (FAQ) by customers of SSB</p>
+    <!-- Hero Section -->
+    <section class="faq-hero">
+        <div class="faq-hero-bg"></div>
+        <div class="faq-hero-content">
+            <span class="faq-badge">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                </svg>
+                Knowledge Base
+            </span>
+            <h1 class="faq-title">Frequently Asked Questions</h1>
+            <p class="faq-subtitle">Find answers to common questions about septic system care, our services, and what to expect when working with SSB Septic.</p>
+        </div>
     </section>
+
+    <!-- FAQ Accordion -->
     <AccordionSection client:load />
-    <section class="py-12 px-2 bg-primary text-center text-white">
-        <h2 class="text-3xl font-bold  mb-6">Have More Questions?</h2>
-        <p class="text-xl mb-8">Get in touch now for further inquiries. Leave a message if we aren't available we're here to help!</p>
-        <a href="tel:+12068338777" class="inline-block bg-white text-primary py-2 px-6 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors duration-300">Call Now: +1 (206) 833-8777</a>
+
+    <!-- CTA Section -->
+    <section class="faq-cta">
+        <div class="faq-cta-container">
+            <div class="faq-cta-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+            </div>
+            <h2 class="faq-cta-title">Still Have Questions?</h2>
+            <p class="faq-cta-text">Our team is here to help with any questions about your septic system. Leave a message if we aren't available - we'll get back to you promptly.</p>
+            <div class="faq-cta-buttons">
+                <a href="tel:+12068338777" class="faq-cta-primary">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    Call (206) 833-8777
+                </a>
+                <a href="/contact" class="faq-cta-secondary">
+                    Contact Form
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </section>
 </Layout>
 
+<style>
+.faq-hero {
+    position: relative;
+    padding: 8rem 1.5rem 5rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 50%, #1e3a5f 100%);
+    overflow: hidden;
+}
 
-<script type="application/ld+json">
+.faq-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.faq-hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.faq-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #86efc0;
+    margin-bottom: 1.5rem;
+}
+
+.faq-badge svg {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.faq-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+}
+
+.faq-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA Section */
+.faq-cta {
+    padding: 5rem 1.5rem;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+}
+
+.faq-cta-container {
+    max-width: 42rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq-cta-icon {
+    width: 4rem;
+    height: 4rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.faq-cta-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: #86efc0;
+}
+
+.faq-cta-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem;
+}
+
+.faq-cta-text {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin: 0 0 2rem;
+}
+
+.faq-cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.faq-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #2d8a6e 0%, #3daa8e 100%);
+    color: white;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(45, 138, 110, 0.4);
+}
+
+.faq-cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(45, 138, 110, 0.5);
+}
+
+.faq-cta-primary svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.faq-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.faq-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.faq-cta-secondary svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-cta-secondary:hover svg {
+    transform: translateX(4px);
+}
+
+@media (min-width: 640px) {
+    .faq-cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+</style>
+
+<script is:inline type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",

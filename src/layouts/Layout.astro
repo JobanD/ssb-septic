@@ -8,16 +8,20 @@ const { title, description } = Astro.props;
 import Navigation from "@/components/Navigation.astro"
 import Footer from "@/components/Footer.astro"
 import MetaTags from '@/components/MetaTags.astro';
-import { ViewTransitions } from 'astro:transitions';
-import logo from "../assets/official-logo-transparent.png"
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Preload fonts for performance -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 		<MetaTags
 			title={title}
 			description={description}
@@ -25,9 +29,8 @@ import logo from "../assets/official-logo-transparent.png"
 			url="https://ssbseptic.com"
 			image="https://ssbseptic.com/_astro/official-logo-transparent.C-WHKZP2_ZEKIeJ.webp"
 		/>
-		<!-- <ViewTransitions /> -->
 		<title>{title}</title>
-		<script type="application/ld+json">
+		<script is:inline type="application/ld+json">
           {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
@@ -51,40 +54,69 @@ import logo from "../assets/official-logo-transparent.png"
           }
         </script>
 	</head>
-	<body>
+	<body class="font-sans antialiased text-slate-700 bg-warm-50">
 		<Navigation />
-		<main style="pt-screen-lg">
+		<main>
 			<slot />
 		</main>
 		<Footer />
 	</body>
 </html>
+
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--primary: #1e3a5f;
+		--primary-light: #3d72a8;
+		--accent: #2d8a6e;
+		--accent-light: #4ade9d;
 	}
+
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		font-family: 'DM Sans', system-ui, sans-serif;
+		scroll-behavior: smooth;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	/* Smooth page transitions */
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 0.3s;
 	}
+
+	/* Selection styling */
+	::selection {
+		background-color: rgba(30, 58, 95, 0.2);
+		color: #1e3a5f;
+	}
+
+	/* Focus styling for accessibility */
+	:focus-visible {
+		outline: 2px solid var(--primary);
+		outline-offset: 2px;
+	}
+
+	/* Improve text rendering */
+	body {
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* Animation utilities */
+	.animate-on-scroll {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	}
+
+	.animate-on-scroll.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Stagger animations */
+	.stagger-1 { animation-delay: 0.1s; }
+	.stagger-2 { animation-delay: 0.2s; }
+	.stagger-3 { animation-delay: 0.3s; }
+	.stagger-4 { animation-delay: 0.4s; }
+	.stagger-5 { animation-delay: 0.5s; }
 </style>

@@ -10,115 +10,509 @@ import Layout from "../layouts/Layout.astro";
   title="About SSB Septic – Trusted Septic Experts in Kent"
   description="Discover more about SSB Septic Services. Learn about our commitment to providing eco-friendly and reliable septic solutions, our experienced team, and how we've served the Seattle and Kent communities for over a decade."
 >
-    <section class="text-center py-16 bg-gradient-to-r from-cyan-500 to-primary text-white">
-        <h1 class="text-5xl font-bold mb-4">About SSB</h1>
-        <p class="text-xl mb-8">Learn more about SSB history, who we are, and how we started</p>
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <span class="hero-label">Our Story</span>
+            <h1 class="hero-title">About SSB</h1>
+            <p class="hero-subtitle">Learn more about SSB history, who we are, and how we started</p>
+        </div>
     </section>
-    <section class="bg-gray-100 w-full py-6">
-      <div class="max-w-6xl mx-auto px-4">
-        <!-- Regular order div -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-          <div class="flex flex-col md:flex-row gap-6 items-center p-6">
-            <div class="flex-1 text-center md:text-left">
-              <h2 class="font-bold mb-4 text-center">
-                <span class="text-4xl text-primary">Our Mission:</span><br>
-                <span class="text-4xl text-black">Protecting Your Environment</span>
-              </h2>
-              <p class="text-lg leading-relaxed text-gray-800 text-center mb-4">Our mission is to deliver top-notch septic services while protecting the environment, ensuring your system's and ecosystem's health with advanced technology. We believe that responsible septic maintenance is essential for preserving our local water sources and maintaining healthy communities throughout the Kent and Seattle areas.</p>
-              <p class="text-lg leading-relaxed text-gray-800 text-center">Every service we provide is performed with environmental stewardship in mind, using eco-friendly practices and state-of-the-art equipment to minimize our impact while maximizing the efficiency and longevity of your septic system. Our commitment extends beyond just fixing problems – we're dedicated to preventing environmental contamination and protecting public health through proper septic care.</p>
-            </div>
-            <div class="flex-1">
-              <Image src={logo} alt="Descriptive Alt Text" class="max-w-full h-auto">
-            </div>
-          </div>
-        </div>
 
-        <!-- Reversed order div for larger screens -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-          <div class="flex flex-col md:flex-row-reverse gap-6 items-center p-6">
-            <div class="flex-1">
-              <h2 class="font-bold mb-4 text-center">
-                <span class="text-4xl text-primary">Who We Are:</span><br>
-                <span class="text-4xl text-black">Your Septic Service Partners</span>
-              </h2>
-              <p class="text-lg leading-relaxed text-gray-800 text-center mb-4">SSB Septic Services is a family-owned and operated business serving the greater Seattle and Kent area for over a decade. We see every septic system as our own, focusing on your satisfaction and safety, providing comprehensive solutions that exceed expectations. Our team consists of licensed professionals with decades of combined experience in septic system installation, maintenance, repair, and emergency services.</p>
-              <p class="text-lg leading-relaxed text-gray-800 text-center">What sets us apart is our personal approach to customer service. We take the time to understand your specific needs, explain our processes clearly, and provide honest assessments without unnecessary upselling. Whether you're dealing with a routine pumping, complex repairs, or a complete system installation, we treat your property and your budget with the same respect we'd want for our own families.</p>
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="section-container">
+            <!-- Mission Card -->
+            <div class="content-card">
+                <div class="card-content">
+                    <span class="card-label">Our Mission</span>
+                    <h2 class="card-title">Protecting Your Environment</h2>
+                    <p class="card-text">Our mission is to deliver top-notch septic services while protecting the environment, ensuring your system's and ecosystem's health with advanced technology. We believe that responsible septic maintenance is essential for preserving our local water sources and maintaining healthy communities throughout the Kent and Seattle areas.</p>
+                    <p class="card-text">Every service we provide is performed with environmental stewardship in mind, using eco-friendly practices and state-of-the-art equipment to minimize our impact while maximizing the efficiency and longevity of your septic system. Our commitment extends beyond just fixing problems – we're dedicated to preventing environmental contamination and protecting public health through proper septic care.</p>
+                </div>
+                <div class="card-image-logo">
+                    <Image src={logo} alt="SSB Septic Logo" class="image" />
+                </div>
             </div>
-            <div class="flex-1">
-              <Image src={holdingPipe} alt="Another Descriptive Alt Text" class="max-w-full h-auto">
-            </div>
-          </div>
-        </div>
 
-      <!-- Regular order div -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-          <div class="flex flex-col md:flex-row gap-6 items-center p-6">
-            <div class="flex-1">
-              <h2 class="font-bold mb-4 text-center">
-                <span class="text-4xl text-primary">Why Choose Us:</span><br>
-                <span class="text-4xl text-black">Expertise Meets Innovation</span>
-              </h2>
-              <p class="text-lg leading-relaxed text-gray-800 text-center mb-4">
-                Blending extensive experience in septic and dump trucking services with innovation, we lead in efficiently addressing your needs.
-                Our commitment to excellence is backed by cutting-edge equipment and a proven track record of optimal results in both sectors.
-              </p>
-              <p class="text-lg leading-relaxed text-gray-800 text-center mb-4">Our fleet of modern, well-maintained trucks and specialized equipment allows us to handle any septic challenge, from routine maintenance to complex emergency situations. We invest continuously in the latest technology and training to ensure our team stays at the forefront of industry best practices and environmental regulations.</p>
-              <p class="text-lg leading-relaxed text-gray-800 text-center">We're fully licensed, bonded, and insured, giving you complete peace of mind. Our 24/7 emergency service means you're never left dealing with septic problems alone. When you choose SSB Septic Services, you're choosing a partner committed to protecting your investment, your property, and your family's health through superior septic system care.</p>
+            <!-- Who We Are Card -->
+            <div class="content-card content-card-reverse">
+                <div class="card-content">
+                    <span class="card-label">Who We Are</span>
+                    <h2 class="card-title">Your Septic Service Partners</h2>
+                    <p class="card-text">SSB Septic Services is a family-owned and operated business serving the greater Seattle and Kent area for over a decade. We see every septic system as our own, focusing on your satisfaction and safety, providing comprehensive solutions that exceed expectations. Our team consists of licensed professionals with decades of combined experience in septic system installation, maintenance, repair, and emergency services.</p>
+                    <p class="card-text">What sets us apart is our personal approach to customer service. We take the time to understand your specific needs, explain our processes clearly, and provide honest assessments without unnecessary upselling. Whether you're dealing with a routine pumping, complex repairs, or a complete system installation, we treat your property and your budget with the same respect we'd want for our own families.</p>
+                </div>
+                <div class="card-image">
+                    <Image src={holdingPipe} alt="SSB team member inspecting septic equipment" class="image" />
+                </div>
             </div>
-            <div class="flex-1">
-              <Image src={groupTrucks} alt="Descriptive Alt Text" class="max-w-full h-auto">
+
+            <!-- Why Choose Us Card -->
+            <div class="content-card">
+                <div class="card-content">
+                    <span class="card-label">Why Choose Us</span>
+                    <h2 class="card-title">Expertise Meets Innovation</h2>
+                    <p class="card-text">Blending extensive experience in septic and dump trucking services with innovation, we lead in efficiently addressing your needs. Our commitment to excellence is backed by cutting-edge equipment and a proven track record of optimal results in both sectors.</p>
+                    <p class="card-text">Our fleet of modern, well-maintained trucks and specialized equipment allows us to handle any septic challenge, from routine maintenance to complex emergency situations. We invest continuously in the latest technology and training to ensure our team stays at the forefront of industry best practices and environmental regulations.</p>
+                    <p class="card-text">We're fully licensed, bonded, and insured, giving you complete peace of mind. Our 24/7 emergency service means you're never left dealing with septic problems alone. When you choose SSB Septic Services, you're choosing a partner committed to protecting your investment, your property, and your family's health through superior septic system care.</p>
+                </div>
+                <div class="card-image">
+                    <Image src={groupTrucks} alt="SSB Septic fleet of service trucks" class="image" />
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Service Areas Section -->
-    <section class="bg-white w-full py-12">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold text-primary mb-6">Proudly Serving Your Community</h2>
-        <p class="text-lg text-gray-800 mb-8">SSB Septic Services is proud to serve residential and commercial customers throughout the greater Seattle metropolitan area. Our extensive service territory includes:</p>
-        <div class="grid md:grid-cols-3 gap-6 mb-8">
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-primary mb-3">Primary Service Areas</h3>
-            <ul class="text-gray-700 space-y-2">
-              <li>Kent</li>
-              <li>Seattle</li>
-              <li>Covington</li>
-              <li>Renton</li>
-              <li>Federal Way</li>
-            </ul>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-primary mb-3">Extended Service Areas</h3>
-            <ul class="text-gray-700 space-y-2">
-              <li>Auburn</li>
-              <li>Tukwila</li>
-              <li>Des Moines</li>
-              <li>Normandy Park</li>
-              <li>Burien</li>
-            </ul>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-primary mb-3">Specialized Services</h3>
-            <ul class="text-gray-700 space-y-2">
-              <li>Emergency Repairs</li>
-              <li>System Inspections</li>
-              <li>Preventive Maintenance</li>
-              <li>New Installations</li>
-              <li>Drain Field Services</li>
-            </ul>
-          </div>
+    <section class="areas-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">Coverage Area</span>
+                <h2 class="section-title">Proudly Serving Your Community</h2>
+                <p class="section-description">SSB Septic Services is proud to serve residential and commercial customers throughout the greater Seattle metropolitan area. Our extensive service territory includes:</p>
+            </div>
+
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Primary Service Areas</h3>
+                    <ul class="area-list">
+                        <li>Kent</li>
+                        <li>Seattle</li>
+                        <li>Covington</li>
+                        <li>Renton</li>
+                        <li>Federal Way</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Extended Service Areas</h3>
+                    <ul class="area-list">
+                        <li>Auburn</li>
+                        <li>Tukwila</li>
+                        <li>Des Moines</li>
+                        <li>Normandy Park</li>
+                        <li>Burien</li>
+                    </ul>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3 class="area-title">Specialized Services</h3>
+                    <ul class="area-list">
+                        <li>Emergency Repairs</li>
+                        <li>System Inspections</li>
+                        <li>Preventive Maintenance</li>
+                        <li>New Installations</li>
+                        <li>Drain Field Services</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="areas-note">Don't see your area listed? Give us a call – we may still be able to help! We're always expanding our service area to meet the needs of more customers throughout Western Washington.</p>
         </div>
-        <p class="text-lg text-gray-800">Don't see your area listed? Give us a call – we may still be able to help! We're always expanding our service area to meet the needs of more customers throughout Western Washington.</p>
-      </div>
     </section>
 
-    <section class="text-center py-12 bg-primary">
-      <h2 class="text-3xl font-bold text-white mb-6">Ready to Get Started?</h2>
-      <p class="text-xl text-white mb-8">Contact us today for a free consultation and quote! Our friendly team is standing by to answer your questions and schedule your service at your convenience.</p>
-      <a href="/contact" class="bg-white text-primary font-semibold px-6 py-3 rounded-lg transition-colors duration-300 hover:bg-gray-200">
-          Get Your Free Quote
-      </a>
-  </section>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Get Started?</h2>
+                <p class="cta-text">Contact us today for a free consultation and quote! Our friendly team is standing by to answer your questions and schedule your service at your convenience.</p>
+                <a href="/contact" class="cta-button">
+                    Get Your Free Quote
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 </Layout>
+
+<style>
+/* Page Hero */
+.page-hero {
+    position: relative;
+    padding: 8rem 1.25rem 5rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 50%, #1e3a5f 100%);
+    z-index: -1;
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.hero-container {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #86efc0;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Section Container */
+.section-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* Content Section */
+.content-section {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.content-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-card:last-child {
+    margin-bottom: 0;
+}
+
+.card-content {
+    padding: 2rem;
+    order: 2;
+}
+
+.card-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #2d8a6e;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+    color: #1e3a5f;
+    margin: 0 0 1.25rem;
+    line-height: 1.2;
+}
+
+.card-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #64748b;
+    margin: 0 0 1rem;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.card-image {
+    order: 1;
+    height: 280px;
+    overflow: hidden;
+}
+
+.card-image-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    padding: 2rem;
+    flex: 0 0 40%;
+}
+
+.card-image-logo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto 3rem;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #2d8a6e;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+}
+
+.section-description {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Areas Section */
+.areas-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.areas-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.area-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.area-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+    border-radius: 12px;
+    margin: 0 auto 1.25rem;
+}
+
+.area-icon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: white;
+}
+
+.area-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0 0 1rem;
+}
+
+.area-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.area-list li {
+    font-size: 0.9375rem;
+    color: #64748b;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.area-list li:last-child {
+    border-bottom: none;
+}
+
+.areas-note {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #64748b;
+    text-align: center;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem;
+}
+
+.cta-text {
+    font-size: 1.0625rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 2rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: white;
+    color: #1e3a5f;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+}
+
+.cta-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+    .section-container {
+        padding: 0 2rem;
+    }
+
+    .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .page-hero {
+        padding: 10rem 2rem 6rem;
+    }
+
+    .content-section {
+        padding: 5rem 0;
+    }
+
+    .content-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .content-card-reverse {
+        flex-direction: row-reverse;
+    }
+
+    .card-content {
+        flex: 1;
+        padding: 3rem;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-image {
+        flex: 0 0 45%;
+        height: auto;
+        min-height: 400px;
+        order: 2;
+    }
+
+    .content-card-reverse .card-image {
+        order: 1;
+    }
+
+    .content-card-reverse .card-content {
+        order: 2;
+    }
+
+    .areas-section,
+    .cta-section {
+        padding: 6rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-content {
+        padding: 4rem;
+    }
+
+    .card-image {
+        flex: 0 0 50%;
+    }
+}
+</style>

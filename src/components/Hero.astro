@@ -1,315 +1,434 @@
 ---
 import { Image } from "astro:assets";
-import backgroundPump from "../assets/background-pump.jpg";
 import truckHero from "../assets/truck-right-mountains.jpg"
 ---
 
-<section id="hero-1618">
-    <div class="container">
-        <div class="content">
-            <span class="topper">
-                <svg class="chevron" width="49" height="15" viewBox="0 0 49 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.7">
-                    <path d="M0.621948 7.49889L6.40262 15L10.343 15L4.56231 7.49889L10.343 -4.2492e-07L6.40262 -2.52681e-07L0.621948 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M7.62195 7.49889L13.4026 15L17.343 15L11.5623 7.49889L17.343 -4.2492e-07L13.4026 -2.52681e-07L7.62195 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M14.7789 7.49889L20.5596 15L24.5 15L18.7193 7.49889L24.5 -4.2492e-07L20.5596 -2.52681e-07L14.7789 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M22.7789 7.49889L28.5596 15L32.5 15L26.7193 7.49889L32.5 -4.2492e-07L28.5596 -2.52681e-07L22.7789 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M30.7789 7.49889L36.5596 15L40.5 15L34.7193 7.49889L40.5 -4.2492e-07L36.5596 -2.52681e-07L30.7789 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M38.7789 7.49889L44.5596 15L48.5 15L42.7193 7.49889L48.5 -4.2492e-07L44.5596 -2.52681e-07L38.7789 7.49889Z" fill="var(--chevronColor)"/>
-                    </g>
-                </svg>
-                Trust us with your septic service needs
-                <svg class="chevron" width="49" height="15" viewBox="0 0 49 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g opacity="0.7">
-                    <path d="M48.3781 7.49889L42.5974 15L38.657 15L44.4377 7.49889L38.657 -4.2492e-07L42.5974 -2.52681e-07L48.3781 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M41.3781 7.49889L35.5974 15L31.657 15L37.4377 7.49889L31.657 -4.2492e-07L35.5974 -2.52681e-07L41.3781 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M34.2211 7.49889L28.4404 15L24.5 15L30.2807 7.49889L24.5 -4.2492e-07L28.4404 -2.52681e-07L34.2211 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M26.2211 7.49889L20.4404 15L16.5 15L22.2807 7.49889L16.5 -4.2492e-07L20.4404 -2.52681e-07L26.2211 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M18.2211 7.49889L12.4404 15L8.50004 15L14.2807 7.49889L8.50004 -4.2492e-07L12.4404 -2.52681e-07L18.2211 7.49889Z" fill="var(--chevronColor)"/>
-                    <path d="M10.2211 7.49889L4.4404 15L0.500041 15L6.28071 7.49889L0.500042 -4.2492e-07L4.4404 -2.52681e-07L10.2211 7.49889Z" fill="var(--chevronColor)"/>
-                    </g>
-                </svg>
-            </span>
-            <h1 class="title">Get All Your Septic Needs Covered Quickly & Efficiently</h1>
-            <a href="/services" class="button-solid">View our Services & Pricing</a>
-        </div>
-        <ul class="card-group">
-            <li class="item">
-                <img class="icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/check-circle.svg" alt="icon" width="48" height="48">
-                <h3 class="h3">100% Success Rate</h3>
-                <p class="item-text">
-                  Our track record is impeccable: every septic system we've worked on functions flawlessly, ensuring long-term satisfaction.
-                </p>
-            </li>
-            <li class="item">
-                <img class="icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/speedometer.svg" alt="icon" width="48" height="48">
-                <h3 class="h3">Rapid Response Team</h3>
-                <p class="item-text">
-                  Emergencies can't wait, which is why our rapid response team is ready to tackle your septic needs promptly and efficiently.
-                </p>
-            </li>
-            <li class="item">
-                <img class="icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/Like.svg" alt="icon" width="48" height="48">
-                <h3 class="h3">Customer Satisfaction</h3>
-                <p class="item-text">
-                  With a focus on customer satisfaction, we're proud that homeowners and businesses highly recommend our services.
-                </p>
-            </li>
-        </ul>
+<section class="hero">
+    <!-- Background -->
+    <div class="hero-bg">
+        <Image
+            src={truckHero}
+            alt="SSB Septic truck with mountain backdrop"
+            class="hero-bg-img"
+            loading="eager"
+            widths={[640, 960, 1280, 1920]}
+            sizes="100vw"
+        />
+        <div class="hero-overlay"></div>
+        <!-- Decorative gradient accent -->
+        <div class="hero-accent"></div>
     </div>
 
-    <!-- Background Image, there's a background image in the CSS for the parallax effect you'll need to change as well if you swap out our images -->
-    <picture class="background">
-        <Image 
-            src={truckHero} 
-            alt="Septic Service Pump pumping water" 
-            width="2250" 
-            height="1300"
-            sizes="(max-width: 600px) 480px, 800px"
-            aria-hidden="true" 
-        />
-    </picture>
+    <div class="hero-container">
+        <div class="hero-content">
+            <!-- Badge -->
+            <div class="hero-badge">
+                <svg class="badge-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>Trusted by Kent & Seattle homeowners</span>
+            </div>
+
+            <!-- Main heading -->
+            <h1 class="hero-title">
+                Get All Your Septic Needs Covered
+                <span class="title-accent">Quickly & Efficiently</span>
+            </h1>
+
+            <!-- Subtext -->
+            <p class="hero-text">
+                Professional septic services with over a decade of experience. 24/7 emergency response, eco-friendly solutions, and 100% customer satisfaction guaranteed.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta">
+                <a href="/services" class="btn btn-primary">
+                    <span>View Services & Pricing</span>
+                    <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+                <a href="tel:+12068338777" class="btn btn-secondary">
+                    <svg class="btn-icon-left" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    <span>Call (206) 833-8777</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="hero-cards">
+            <div class="feature-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">100% Success Rate</h3>
+                <p class="card-text">
+                    Our track record is impeccable: every septic system we've worked on functions flawlessly, ensuring long-term satisfaction.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Rapid Response Team</h3>
+                <p class="card-text">
+                    Emergencies can't wait, which is why our rapid response team is ready to tackle your septic needs promptly and efficiently.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Customer Satisfaction</h3>
+                <p class="card-text">
+                    With a focus on customer satisfaction, we're proud that homeowners and businesses highly recommend our services.
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <style>
-    :root {
-    --primary: hsl(217, 90%, 55%); /* Vibrant Blue */
-    --secondary: hsl(146, 64%, 42%); /* Lush Green */
-    --chevronColor: var(--primary); /* Use the primary color for chevrons */
-    --headerColor: var(--primary); /* Headers in the primary color */
-    --bodyTextColor: #000; /* White for contrast */
-    --sectionPadding: 2rem; /* Adjusted section padding */
-    --button-bg: var(--primary); /* Button background color */
-    --button-hover-bg: var(--secondary); /* Button hover background color */
-    --card-background: #f0f0f0; /* Light background for card for better readability */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 1.25rem 3rem;
+    overflow: hidden;
 }
 
-    /* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #hero-1618 {
-    padding: var(--sectionPadding);
-    /* 200px - 300px - leaving extra space for the navigation */
-    /* padding-top: clamp(12.5rem, 15.95vw, 18.75rem); */
-    position: relative;
-    z-index: 1;
-  }
-  #hero-1618 .container {
+/* Background */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.92) 0%,
+        rgba(30, 58, 95, 0.85) 50%,
+        rgba(15, 23, 42, 0.75) 100%
+    );
+}
+
+.hero-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(
+        to top,
+        rgba(45, 138, 110, 0.15) 0%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+/* Container */
+.hero-container {
     width: 100%;
     max-width: 80rem;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* 60px - 180px */
-    gap: clamp(3.75rem, 13vw, 11.25rem);
-  }
-  #hero-1618 .content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: left;
-    width: 100%;
-    max-width: 48.75rem;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: flex-start;
-  }
-  #hero-1618 .topper {
-    /* 13px - 16px */
-    font-size: clamp(0.8125rem, 1.5vw, 1rem);
-    line-height: 1.2em;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-align: center;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
-    color: var(--primary);
-    display: flex;
-    justify-content: center;
+    gap: 3rem;
+}
+
+/* Content */
+.hero-content {
+    max-width: 42rem;
+}
+
+/* Badge */
+.hero-badge {
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    position: relative;
-  }
-  #hero-1618 .chevron {
-    --chevronColor: var(--primary);
-    width: 3rem;
-    height: auto;
-  }
-  #hero-1618 .title {
-    /* 39px - 61px */
-    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-    font-weight: 700;
-    line-height: 1.2em;
-    text-align: inherit;
-    max-width: 100%;
-    margin: 0 0 2.5rem 0;
-    color: #fff;
-    position: relative;
-  }
-  #hero-1618 .text {
-    /* 16px - 20px */
-    font-size: clamp(1rem, 1.95vw, 1.25rem);
-    line-height: 1.5em;
-    text-align: inherit;
-    width: 100%;
-    /* 464px - 622px */
-    max-width: clamp(29rem, 60vw, 38.785rem);
-    margin: 0 0 2.5rem 0;
-    color: #fff;
-  }
-  #hero-1618 .button-solid {
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-decoration: none;
-    font-weight: 700;
-    margin: 0;
-    color: #fff;
-    padding: 0 1.5rem;
-    background-color: var(--primary);
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-  }
-  #hero-1618 .button-solid:before {
-    content: '';
-    position: absolute;
+    padding: 0.5rem 1rem;
+    background: rgba(45, 138, 110, 0.2);
+    border: 1px solid rgba(45, 138, 110, 0.3);
+    border-radius: 9999px;
+    color: #86efc0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.badge-icon {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+/* Title */
+.hero-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: white;
+    margin: 0 0 1.5rem;
+    animation: fadeInUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+}
+
+.title-accent {
     display: block;
-    height: 100%;
-    width: 0%;
-    background: #000;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width .3s;
-  }
-  #hero-1618 .button-solid:hover:before {
-    width: 100%;
-  }
-  #hero-1618 .card-group {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    /* 16px - 20px */
-    gap: clamp(1rem, 2.3vw, 1.25rem);
-  }
-  #hero-1618 .item {
-    width: 100%;
-    text-align: left;
-    list-style: none;
-    margin: 0;
-    /* 24px - 32px */
-    padding: clamp(1.5rem, 3vw, 2rem);
-    background-color: #fff;
-    box-shadow: 0px 12px 80px 0px rgba(26, 26, 26, 0.08);
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-    grid-column: span 12;
-    grid-row: span 1;
+    background: linear-gradient(135deg, #86efc0 0%, #4ade9d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Text */
+.hero-text {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 2rem;
+    max-width: 36rem;
+    animation: fadeInUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+/* CTA Buttons */
+.hero-cta {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    animation: fadeInUp 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 1;
-  }
-  #hero-1618 .icon {
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2d8a6e 0%, #3daa8e 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(45, 138, 110, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(45, 138, 110, 0.5);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-icon-left {
+    width: 1rem;
+    height: 1rem;
+}
+
+.btn-primary:hover .btn-icon {
+    transform: translateX(4px);
+}
+
+/* Feature Cards */
+.hero-cards {
+    display: grid;
+    gap: 1rem;
+    animation: fadeInUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
     width: 3rem;
-    height: auto;
-    margin: 0 0 1.5rem 0;
-  }
-  #hero-1618 .h3 {
-    /* 20px - 25px */
-    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
-    line-height: 1.2em;
-    font-weight: bold;
-    text-align: inherit;
-    margin: 0 0 1rem 0;
-    color: var(--headerColor);
-  }
-  #hero-1618 .item-text {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    max-width: 28.125rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.card-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+}
+
+.card-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0 0 0.5rem;
+}
+
+.card-text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: #64748b;
     margin: 0;
-    padding: 0;
-    color: var(--bodyTextColor);
-  }
-  #hero-1618 .background {
-    width: 100%;
-    height: 55%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
-  }
-  #hero-1618 .background:before {
-    /* Overlay */
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: #111926;
-    opacity: .8;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    /* prevents the cursor from interacting with it */
-    pointer-events: none;
-  }
-  #hero-1618 .background img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    /* makes the top of the image start at the top of the parent */
-    object-position: top;
-  }
 }
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #hero-1618 {
-    padding-bottom: 0;
-  }
-  #hero-1618 .container {
-    align-items: flex-start;
-  }
-  #hero-1618 .content {
-    text-align: left;
-    margin-left: 0;
-    align-items: flex-start;
-  }
-  #hero-1618 .item {
-    grid-column: span 4;
-  }
-  #hero-1618 .background {
-    height: 87%;
-  }
-  #hero-1618 .background:before {
-    background: linear-gradient(90deg, #111926 21.41%, rgba(17, 25, 38, 0.72) 34.98%, rgba(17, 25, 38, 0) 62.53%);
-    opacity: 1;
-  }
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-/* Large Desktop Parallax Effect - 100px */
-@media only screen and (min-width: 100rem) {
-  #hero-1618 .background {
-    background: url("../assets/background-pump.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* creates the parallax effect */
-    background-attachment: fixed;
-  }
-  #hero-1618 .background img {
-    display: none;
-  }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+    .hero {
+        padding: 8rem 2rem 4rem;
+    }
+
+    .hero-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn {
+        padding: 1rem 1.75rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .hero {
+        padding: 0 2rem;
+        min-height: 100vh;
+    }
+
+    .hero-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        padding: 6rem 0;
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 36rem;
+    }
+
+    .hero-title {
+        font-size: 3.25rem;
+    }
+
+    .hero-text {
+        font-size: 1.125rem;
+    }
+
+    .hero-cards {
+        flex: 0 0 auto;
+        width: 340px;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .feature-card {
+        padding: 1.75rem;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.95) 0%,
+            rgba(30, 58, 95, 0.85) 40%,
+            rgba(15, 23, 42, 0.7) 100%
+        );
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+    .hero-content {
+        max-width: 42rem;
+    }
+
+    .hero-title {
+        font-size: 3.75rem;
+    }
+
+    .hero-cards {
+        width: 380px;
+    }
 }
 </style>
