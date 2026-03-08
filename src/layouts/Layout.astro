@@ -8,6 +8,10 @@ const { title, description } = Astro.props;
 import Navigation from "@/components/Navigation.astro"
 import Footer from "@/components/Footer.astro"
 import MetaTags from '@/components/MetaTags.astro';
+
+const whatConvertsScriptSrc = import.meta.env.PUBLIC_WHATCONVERTS_SCRIPT_SRC;
+const isWhatConvertsEnabled =
+	import.meta.env.PUBLIC_WHATCONVERTS_ENABLED === "true" && Boolean(whatConvertsScriptSrc);
 ---
 
 <!doctype html>
@@ -53,6 +57,16 @@ import MetaTags from '@/components/MetaTags.astro';
             "image": "https://ssbseptic.com/_astro/official-logo-transparent.C-WHKZP2_ZEKIeJ.webp"
           }
         </script>
+		{
+			isWhatConvertsEnabled && (
+				<>
+					<script is:inline>
+						{`var $wc_load=function(a){return JSON.parse(JSON.stringify(a))}, $wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL), ref:$wc_load(document.referrer), search:$wc_load(location.search), hash:$wc_load(location.hash)}};`}
+					</script>
+					<script src={whatConvertsScriptSrc}></script>
+				</>
+			)
+		}
 	</head>
 	<body class="font-sans antialiased text-slate-700 bg-warm-50">
 		<Navigation />

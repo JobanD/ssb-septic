@@ -56,10 +56,74 @@ import truckBack from '../assets/back-truck.jpg';
                         <div class="info-details">
                             <p><strong>Phone:</strong> <a href="tel:+12068338777" class="info-link">(206) 833-8777</a></p>
                             <p><strong>Address:</strong> 25000 180th Ave SE, Covington, WA 98042</p>
-                            <p><strong>Service Areas:</strong> Kent, Seattle, Covington, Renton, Federal Way, Auburn, and surrounding areas</p>
+                            <p><strong>Service Areas:</strong> Kent, Seattle, Covington, Renton, Federal Way, Auburn, Snohomish County, and surrounding areas</p>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- Contact Form Card -->
+            <div class="form-card">
+                <div class="form-header">
+                    <h2 class="form-title">Request Service</h2>
+                    <p class="form-text">Fill out this form and our team will follow up to schedule service.</p>
+                </div>
+
+                <form id="ssb-contact-form" name="ssb-contact-form" class="lead-form wc-track-form" action="/api/contact" method="post" novalidate>
+                    <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                    <input type="hidden" name="gclid" value="" />
+                    <input type="hidden" name="gbraid" value="" />
+                    <input type="hidden" name="wbraid" value="" />
+                    <input type="hidden" name="utm_source" value="" />
+                    <input type="hidden" name="utm_medium" value="" />
+                    <input type="hidden" name="utm_campaign" value="" />
+                    <input type="hidden" name="landing_page" value="" />
+                    <input type="hidden" name="referrer" value="" />
+
+                    <div class="form-grid form-grid-two">
+                        <label class="form-field">
+                            <span>First Name</span>
+                            <input type="text" name="firstName" maxlength="50" required />
+                        </label>
+                        <label class="form-field">
+                            <span>Last Name</span>
+                            <input type="text" name="lastName" maxlength="50" required />
+                        </label>
+                    </div>
+
+                    <div class="form-grid">
+                        <label class="form-field">
+                            <span>Street Address</span>
+                            <input type="text" name="streetAddress" maxlength="120" required />
+                        </label>
+                    </div>
+
+                    <div class="form-grid form-grid-two">
+                        <label class="form-field">
+                            <span>City</span>
+                            <input type="text" name="city" maxlength="80" required />
+                        </label>
+                        <label class="form-field">
+                            <span>ZIP</span>
+                            <input type="text" name="zip" inputmode="numeric" maxlength="10" required />
+                        </label>
+                    </div>
+
+                    <fieldset class="services-fieldset">
+                        <legend>Services Needed</legend>
+                        <div class="services-grid">
+                            <label><input type="checkbox" name="services" value="Septic Pumping" /> Septic Pumping</label>
+                            <label><input type="checkbox" name="services" value="Septic Inspection" /> Septic Inspection</label>
+                            <label><input type="checkbox" name="services" value="Septic Repair" /> Septic Repair</label>
+                            <label><input type="checkbox" name="services" value="Septic Installation" /> Septic Installation</label>
+                            <label><input type="checkbox" name="services" value="Emergency Service" /> Emergency Service</label>
+                            <label><input type="checkbox" name="services" value="Other" /> Other</label>
+                        </div>
+                    </fieldset>
+
+                    <button id="ssb-contact-submit" type="submit" class="form-submit wc-track-submit">Send Request</button>
+                    <p id="form-status" class="form-status" aria-live="polite"></p>
+                </form>
             </div>
 
             <!-- Booking Section -->
@@ -135,6 +199,92 @@ import truckBack from '../assets/back-truck.jpg';
             </div>
         </div>
     </section>
+
+    <script is:inline>
+        const form = document.getElementById("ssb-contact-form");
+        const statusEl = document.getElementById("form-status");
+
+        if (form && statusEl) {
+            const params = new URLSearchParams(window.location.search);
+            const setHidden = (name, value) => {
+                const input = form.querySelector(`input[name="${name}"]`);
+                if (input) input.value = value || "";
+            };
+
+            setHidden("gclid", params.get("gclid"));
+            setHidden("gbraid", params.get("gbraid"));
+            setHidden("wbraid", params.get("wbraid"));
+            setHidden("utm_source", params.get("utm_source"));
+            setHidden("utm_medium", params.get("utm_medium"));
+            setHidden("utm_campaign", params.get("utm_campaign"));
+            setHidden("landing_page", window.location.href);
+            setHidden("referrer", document.referrer || "");
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                statusEl.textContent = "";
+                statusEl.classList.remove("error");
+
+                const formData = new FormData(form);
+                const services = formData.getAll("services").map((value) => String(value));
+
+                if (services.length === 0) {
+                    statusEl.textContent = "Please select at least one service.";
+                    statusEl.classList.add("error");
+                    return;
+                }
+
+                const payload = {
+                    firstName: String(formData.get("firstName") || ""),
+                    lastName: String(formData.get("lastName") || ""),
+                    streetAddress: String(formData.get("streetAddress") || ""),
+                    city: String(formData.get("city") || ""),
+                    zip: String(formData.get("zip") || ""),
+                    services,
+                    website: String(formData.get("website") || ""),
+                    gclid: String(formData.get("gclid") || ""),
+                    gbraid: String(formData.get("gbraid") || ""),
+                    wbraid: String(formData.get("wbraid") || ""),
+                    utm_source: String(formData.get("utm_source") || ""),
+                    utm_medium: String(formData.get("utm_medium") || ""),
+                    utm_campaign: String(formData.get("utm_campaign") || ""),
+                    landing_page: String(formData.get("landing_page") || ""),
+                    referrer: String(formData.get("referrer") || ""),
+                };
+
+                const submitButton = form.querySelector('button[type="submit"]');
+                if (submitButton) submitButton.disabled = true;
+
+                try {
+                    const response = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload),
+                    });
+                    const result = await response.json();
+
+                    if (!response.ok || !result.ok) {
+                        const defaultError = "Unable to send request. Please call us at (206) 833-8777.";
+                        const firstFieldError = result?.errors ? Object.values(result.errors)[0] : "";
+                        statusEl.textContent = result.error || firstFieldError || defaultError;
+                        statusEl.classList.add("error");
+                        return;
+                    }
+
+                    statusEl.textContent = "Thanks, your request has been submitted.";
+                    statusEl.classList.remove("error");
+                    form.reset();
+                    setHidden("landing_page", window.location.href);
+                    setHidden("referrer", document.referrer || "");
+                } catch (error) {
+                    statusEl.textContent = "Unable to send request. Please call us at (206) 833-8777.";
+                    statusEl.classList.add("error");
+                } finally {
+                    if (submitButton) submitButton.disabled = false;
+                }
+            });
+        }
+    </script>
 </Layout>
 
 <style>
@@ -299,6 +449,141 @@ import truckBack from '../assets/back-truck.jpg';
 
 .info-link:hover {
     color: #2d8a6e;
+}
+
+/* Form Card */
+.form-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+}
+
+.form-header {
+    margin-bottom: 1.5rem;
+}
+
+.form-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin: 0 0 0.5rem;
+}
+
+.form-text {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.lead-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.45rem;
+    font-size: 0.92rem;
+    color: #334155;
+}
+
+.form-field span {
+    font-weight: 600;
+}
+
+.form-field input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0.75rem 0.85rem;
+    font: inherit;
+    color: #0f172a;
+    background: #fff;
+}
+
+.form-field input:focus {
+    border-color: #2d8a6e;
+    outline: 2px solid rgba(45, 138, 110, 0.2);
+    outline-offset: 0;
+}
+
+.services-fieldset {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 0;
+}
+
+.services-fieldset legend {
+    font-weight: 600;
+    color: #1e3a5f;
+    padding: 0 0.4rem;
+}
+
+.services-grid {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.services-grid label {
+    font-size: 0.94rem;
+    color: #334155;
+    display: flex;
+    gap: 0.55rem;
+    align-items: center;
+}
+
+.services-grid input {
+    width: 1rem;
+    height: 1rem;
+}
+
+.form-submit {
+    border: 0;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 0.95rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+    box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 58, 95, 0.38);
+}
+
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+    transform: none;
+}
+
+.form-status {
+    min-height: 1.4rem;
+    margin: 0;
+    font-weight: 600;
+    color: #2d8a6e;
+}
+
+.form-status.error {
+    color: #b91c1c;
+}
+
+.honeypot {
+    position: absolute;
+    left: -9999px;
 }
 
 /* Feature Card */
@@ -482,6 +767,14 @@ import truckBack from '../assets/back-truck.jpg';
     .feature-buttons {
         flex-direction: row;
         justify-content: center;
+    }
+
+    .form-grid-two {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .trust-grid {

@@ -232,13 +232,13 @@ export const AccordionSection = () => (
           <AccordionContent className="text-slate-600 pb-5">
             <p className="mb-4 leading-relaxed">SSB Septic Services proudly serves residential and commercial customers throughout the greater Seattle metropolitan area. Our primary service areas include:</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
-              {['Kent', 'Seattle', 'Covington', 'Renton', 'Federal Way', 'Auburn', 'Tukwila', 'Des Moines', 'Normandy Park', 'Burien'].map((area) => (
+              {['Kent', 'Seattle', 'Covington', 'Renton', 'Federal Way', 'Auburn', 'Tukwila', 'Des Moines', 'Normandy Park', 'Burien', 'Snohomish County'].map((area) => (
                 <div key={area} className="bg-slate-50 rounded-lg px-3 py-2 text-center text-sm font-medium text-slate-700">
                   {area}
                 </div>
               ))}
             </div>
-            <p className="leading-relaxed">We also service surrounding areas throughout King County. If your location isn't listed, please give us a call - we may still be able to help! Our goal is to provide reliable septic services to as many communities as possible while maintaining our high standards of quality and customer service.</p>
+            <p className="leading-relaxed">We also service surrounding areas throughout King County and Snohomish County. If your location isn't listed, please give us a call - we may still be able to help! Our goal is to provide reliable septic services to as many communities as possible while maintaining our high standards of quality and customer service.</p>
           </AccordionContent>
         </AccordionItem>
 
