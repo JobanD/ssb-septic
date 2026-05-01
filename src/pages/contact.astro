@@ -91,6 +91,17 @@ import truckBack from '../assets/back-truck.jpg';
                         </label>
                     </div>
 
+                    <div class="form-grid form-grid-two">
+                        <label class="form-field">
+                            <span>Email</span>
+                            <input type="email" name="email" maxlength="120" autocomplete="email" required />
+                        </label>
+                        <label class="form-field">
+                            <span>Phone</span>
+                            <input type="tel" name="phone" maxlength="25" inputmode="tel" autocomplete="tel" required />
+                        </label>
+                    </div>
+
                     <div class="form-grid">
                         <label class="form-field">
                             <span>Street Address</span>
@@ -237,6 +248,8 @@ import truckBack from '../assets/back-truck.jpg';
                 const payload = {
                     firstName: String(formData.get("firstName") || ""),
                     lastName: String(formData.get("lastName") || ""),
+                    email: String(formData.get("email") || ""),
+                    phone: String(formData.get("phone") || ""),
                     streetAddress: String(formData.get("streetAddress") || ""),
                     city: String(formData.get("city") || ""),
                     zip: String(formData.get("zip") || ""),

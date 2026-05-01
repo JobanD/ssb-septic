@@ -16,6 +16,12 @@ function sanitizeText(value, maxLength) {
     .slice(0, maxLength);
 }
 
+function normalizePhoneDigits(value) {
+  const digits = String(value ?? "").replace(/\D+/g, "");
+  if (digits.length === 11 && digits.startsWith("1")) return digits.slice(1);
+  return digits;
+}
+
 function parseServices(rawServices) {
   const services = Array.isArray(rawServices)
     ? rawServices
@@ -80,6 +86,14 @@ function validate(payload) {
     errors.lastName = "Enter a valid last name.";
   }
 
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email) || payload.email.length > 120) {
+    errors.email = "Enter a valid email address.";
+  }
+
+  if (normalizePhoneDigits(payload.phone).length !== 10) {
+    errors.phone = "Enter a valid US phone number.";
+  }
+
   if (!/^[A-Za-z0-9][A-Za-z0-9.,#'\/ -]{4,119}$/.test(payload.streetAddress)) {
     errors.streetAddress = "Enter a valid street address.";
   }
@@ -103,6 +117,8 @@ function buildLeadPayload(body) {
   return {
     firstName: sanitizeText(body.firstName, 50),
     lastName: sanitizeText(body.lastName, 50),
+    email: sanitizeText(body.email, 120),
+    phone: sanitizeText(body.phone, 25),
     streetAddress: sanitizeText(body.streetAddress, 120),
     city: sanitizeText(body.city, 80),
     zip: sanitizeText(body.zip, 10),
@@ -154,6 +170,8 @@ async function sendWithResend(payload) {
   const html = `
     <h2>New SSB Septic Lead</h2>
     <p><strong>Name:</strong> ${payload.firstName} ${payload.lastName}</p>
+    <p><strong>Email:</strong> ${payload.email}</p>
+    <p><strong>Phone:</strong> ${payload.phone}</p>
     <p><strong>Address:</strong> ${payload.streetAddress}, ${payload.city}, ${payload.zip}</p>
     <p><strong>Services:</strong> ${payload.services.join(", ")}</p>
     <hr />
