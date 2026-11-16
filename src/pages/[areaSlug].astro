@@ -1,0 +1,35 @@
+---
+/**
+ * Service area (city) landing pages, e.g. /septic-services-kent-wa.
+ * One page is generated per entry in src/data/serviceAreas.ts.
+ */
+import Layout from "../layouts/Layout.astro";
+import ServicesPage from "../components/ServicesPage.astro";
+import { serviceAreas, type ServiceArea } from "../data/serviceAreas";
+
+export function getStaticPaths() {
+    return serviceAreas.map((area) => ({
+        params: { areaSlug: area.slug },
+        props: { area },
+    }));
+}
+
+interface Props {
+    area: ServiceArea;
+}
+
+const { area } = Astro.props;
+---
+
+<Layout
+    title={area.metaTitle}
+    description={area.metaDescription}
+    url={`https://ssbseptic.com/${area.slug}`}
+>
+    <ServicesPage
+        heroLabel={`Serving ${area.city}, WA`}
+        heroTitle={area.heroTitle}
+        heroSubtitle={area.heroSubtitle}
+        intro={{ heading: area.introHeading, paragraphs: area.introText }}
+    />
+</Layout>

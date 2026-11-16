@@ -2,9 +2,11 @@
 interface Props {
 	title: string;
 	description: string;
+	/** Full canonical URL for this page (optional). */
+	url?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, url } = Astro.props;
 import Navigation from "@/components/Navigation.astro"
 import Footer from "@/components/Footer.astro"
 import MetaTags from '@/components/MetaTags.astro';
@@ -30,9 +32,10 @@ const isWhatConvertsEnabled =
 			title={title}
 			description={description}
 			keywords="septic services, septic system repair, septic maintenance, eco-friendly septic solutions, septic tank installation, septic system experts, Seattle septic service, Kent septic service, residential septic services, commercial septic services"
-			url="https://ssbseptic.com"
+			url={url ?? "https://ssbseptic.com"}
 			image="https://ssbseptic.com/_astro/official-logo-transparent.C-WHKZP2_ZEKIeJ.webp"
 		/>
+		{url && <link rel="canonical" href={url} />}
 		<title>{title}</title>
 		<script is:inline type="application/ld+json">
           {
