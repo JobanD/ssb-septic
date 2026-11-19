@@ -1,4 +1,5 @@
 ---
+import { richText } from "../lib/richText";
 /**
  * Shared Services & Pricing page body.
  * Used by /services and by every service area (city) landing page,
@@ -10,7 +11,7 @@ interface Props {
     heroSubtitle?: string;
     /** Optional subtitle + text block shown between the hero and the pricing card. */
     intro?: {
-        heading: string;
+        heading?: string;
         paragraphs: string[];
     };
 }
@@ -37,8 +38,8 @@ const {
     <!-- Location Intro (used by service area pages) -->
     <section class="intro-section">
         <div class="intro-container">
-            <h2 class="intro-title">{intro.heading}</h2>
-            {intro.paragraphs.map((p) => <p class="intro-text">{p}</p>)}
+            {intro.heading && <h2 class="intro-title">{intro.heading}</h2>}
+            {intro.paragraphs.map((p) => <p class="intro-text" set:html={richText(p)} />)}
         </div>
     </section>
 )}
@@ -324,7 +325,6 @@ const {
 .intro-container {
     max-width: 48rem;
     margin: 0 auto;
-    text-align: center;
 }
 
 .intro-title {
@@ -341,6 +341,11 @@ const {
     color: #475569;
     line-height: 1.75;
     margin: 0 0 1rem;
+}
+
+.intro-text :global(strong) {
+    color: #1e3a5f;
+    font-weight: 700;
 }
 
 .intro-text:last-child {
