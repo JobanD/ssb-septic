@@ -1,0 +1,278 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { serviceAreas, serviceAreasHub as hub } from "../data/serviceAreas";
+---
+
+<Layout
+    title={hub.metaTitle}
+    description={hub.metaDescription}
+    url="https://ssbseptic.com/service-areas"
+>
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <span class="hero-label">Local & Family Owned</span>
+            <h1 class="hero-title">{hub.heroTitle}</h1>
+            <p class="hero-subtitle">{hub.heroSubtitle}</p>
+        </div>
+    </section>
+
+    <section class="areas-section">
+        <div class="section-container">
+            <div class="intro">
+                <h2 class="intro-title">{hub.introHeading}</h2>
+                {hub.introText.map((p) => <p class="intro-text">{p}</p>)}
+            </div>
+
+            <ul class="areas-grid">
+                {
+                    serviceAreas.map((area) => (
+                        <li>
+                            <a href={`/${area.slug}`} class="area-card">
+                                <span class="area-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </span>
+                                <span class="area-name">{area.city}, WA</span>
+                                <span class="area-arrow" aria-hidden="true">→</span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <div class="cta-content">
+                <h2 class="cta-title">Don't See Your City?</h2>
+                <p class="cta-text">We serve surrounding areas throughout King and Snohomish County. Give us a call and we'll let you know if we can help.</p>
+                <a href="tel:+12068338777" class="cta-button">
+                    <svg viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    <span>Call (206) 833-8777</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style>
+.page-hero {
+    position: relative;
+    padding: 8rem 1.25rem 5rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 50%, #1e3a5f 100%);
+    z-index: -1;
+}
+
+.hero-container {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.hero-label {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #86efc0;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    letter-spacing: 0.05em;
+}
+
+.section-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.areas-section {
+    padding: 4rem 0 5rem;
+    background: #f8fafc;
+}
+
+.intro {
+    max-width: 48rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.intro-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 800;
+    color: #1e3a5f;
+    margin: 0 0 1.25rem;
+    line-height: 1.25;
+}
+
+.intro-text {
+    font-size: 1.0625rem;
+    color: #475569;
+    line-height: 1.75;
+    margin: 0 0 1rem;
+}
+
+.areas-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.area-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.area-card:hover {
+    transform: translateY(-3px);
+    border-color: #2d8a6e;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.area-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.area-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: white;
+}
+
+.area-name {
+    flex: 1;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    color: #1e3a5f;
+}
+
+.area-arrow {
+    color: #2d8a6e;
+    font-weight: 700;
+    transition: transform 0.2s ease;
+}
+
+.area-card:hover .area-arrow {
+    transform: translateX(4px);
+}
+
+.cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8a 100%);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    color: white;
+    margin: 0 0 1rem;
+}
+
+.cta-text {
+    font-size: 1.0625rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 2rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: white;
+    color: #1e3a5f;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.cta-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .section-container {
+        padding: 0 2rem;
+    }
+
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .page-hero {
+        padding: 10rem 2rem 6rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+</style>
