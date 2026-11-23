@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { serviceAreas, serviceAreasHub as hub } from "../data/serviceAreas";
+import { richText } from "../lib/richText";
 ---
 
 <Layout
@@ -22,7 +23,7 @@ import { serviceAreas, serviceAreasHub as hub } from "../data/serviceAreas";
         <div class="section-container">
             <div class="intro">
                 <h2 class="intro-title">{hub.introHeading}</h2>
-                {hub.introText.map((p) => <p class="intro-text">{p}</p>)}
+                {hub.introText.map((p) => <p class="intro-text" set:html={richText(p)} />)}
             </div>
 
             <ul class="areas-grid">
@@ -51,7 +52,7 @@ import { serviceAreas, serviceAreasHub as hub } from "../data/serviceAreas";
         <div class="section-container">
             <div class="cta-content">
                 <h2 class="cta-title">Don't See Your City?</h2>
-                <p class="cta-text">We serve surrounding areas throughout King and Snohomish County. Give us a call and we'll let you know if we can help.</p>
+                <p class="cta-text">We serve surrounding areas throughout King, Pierce, and Snohomish County. Give us a call and we'll let you know if we can help.</p>
                 <a href="tel:+12068338777" class="cta-button">
                     <svg viewBox="0 0 20 20" fill="currentColor">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -140,6 +141,11 @@ import { serviceAreas, serviceAreasHub as hub } from "../data/serviceAreas";
     color: #475569;
     line-height: 1.75;
     margin: 0 0 1rem;
+}
+
+.intro-text :global(strong) {
+    color: #1e3a5f;
+    font-weight: 700;
 }
 
 .areas-grid {
@@ -259,7 +265,12 @@ import { serviceAreas, serviceAreasHub as hub } from "../data/serviceAreas";
         padding: 0 2rem;
     }
 
-    .areas-grid {
+    .intro-text :global(strong) {
+    color: #1e3a5f;
+    font-weight: 700;
+}
+
+.areas-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -271,7 +282,12 @@ import { serviceAreas, serviceAreasHub as hub } from "../data/serviceAreas";
 }
 
 @media (min-width: 1024px) {
-    .areas-grid {
+    .intro-text :global(strong) {
+    color: #1e3a5f;
+    font-weight: 700;
+}
+
+.areas-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
