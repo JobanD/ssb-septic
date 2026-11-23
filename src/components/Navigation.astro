@@ -1,6 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/official-logo-transparent.png"
+import { serviceAreas } from "../data/serviceAreas";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+const isServiceAreaPage =
+    currentPath === "/service-areas" ||
+    serviceAreas.some((area) => currentPath === `/${area.slug}`);
 ---
 <header id="nav" class="bg-white/95 backdrop-blur-lg border-b border-slate-100">
     <div class="nav-container">
@@ -49,6 +55,35 @@ import logo from "../assets/official-logo-transparent.png"
                     <li class="nav-item">
                         <a href="/services" class="nav-link">Services</a>
                     </li>
+                    {serviceAreas.length > 0 && (
+                        <li class="nav-item has-dropdown">
+                            <a
+                                href="/service-areas"
+                                class:list={["nav-link", "dropdown-trigger", { active: isServiceAreaPage }]}
+                                aria-haspopup="true"
+                            >
+                                Service Areas
+                                <svg class="caret" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown">
+                                <ul class="dropdown-list">
+                                    {serviceAreas.map((area) => (
+                                        <li>
+                                            <a
+                                                href={`/${area.slug}`}
+                                                class:list={["dropdown-link", { current: currentPath === `/${area.slug}` }]}
+                                            >
+                                                {area.city}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                                <a href="/service-areas" class="dropdown-all">View all service areas →</a>
+                            </div>
+                        </li>
+                    )}
                     <li class="nav-item">
                         <a href="/faq" class="nav-link">FAQ</a>
                     </li>
@@ -293,6 +328,13 @@ import logo from "../assets/official-logo-transparent.png"
     #nav.active .nav-item:nth-child(3) { transition-delay: 0.2s; }
     #nav.active .nav-item:nth-child(4) { transition-delay: 0.25s; }
     #nav.active .nav-item:nth-child(5) { transition-delay: 0.3s; }
+    #nav.active .nav-item:nth-child(6) { transition-delay: 0.35s; }
+
+    /* Mobile: Service Areas links straight to the hub page */
+    .dropdown,
+    .caret {
+        display: none;
+    }
 
     .nav-link {
         display: block;
@@ -415,6 +457,102 @@ import logo from "../assets/official-logo-transparent.png"
     .nav-link.active {
         color: #1e3a5f;
         font-weight: 600;
+    }
+
+    /* Service Areas dropdown */
+    .has-dropdown {
+        position: relative;
+    }
+
+    .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+    }
+
+    .caret {
+        width: 1rem;
+        height: 1rem;
+        transition: transform 0.2s ease;
+    }
+
+    .has-dropdown:hover .caret,
+    .has-dropdown:focus-within .caret {
+        transform: rotate(180deg);
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 8px);
+        min-width: 26rem;
+        padding: 1rem;
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+        z-index: 60;
+    }
+
+    /* Invisible bridge so the menu doesn't close when moving the mouse down */
+    .dropdown::before {
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: 0;
+        right: 0;
+        height: 12px;
+    }
+
+    .has-dropdown:hover .dropdown,
+    .has-dropdown:focus-within .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+
+    .dropdown-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.125rem 0.5rem;
+    }
+
+    .dropdown-link {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9375rem;
+        color: #475569;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.15s ease;
+    }
+
+    .dropdown-link:hover,
+    .dropdown-link.current {
+        background: #f1f5f9;
+        color: #1e3a5f;
+    }
+
+    .dropdown-all {
+        display: block;
+        margin-top: 0.75rem;
+        padding: 0.75rem 0.75rem 0;
+        border-top: 1px solid #f1f5f9;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #2d8a6e;
+        text-decoration: none;
+    }
+
+    .dropdown-all:hover {
+        color: #1d7a5e;
     }
 
     .nav-link.nav-cta {
